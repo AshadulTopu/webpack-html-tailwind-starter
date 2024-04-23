@@ -113,60 +113,6 @@ subMenuList && subMenuList.forEach((subMenu) => {
 
    
   }))
-  
-
- // pricing button switch animation
-const priceButton = document.querySelectorAll(".pricingTabLinks");
-// Add onclick event listener to each element
-priceButton && priceButton.forEach(el => el.addEventListener("click", function(){
-  document.querySelector(".pricingButtonActive")?.classList.remove("pricingButtonActive")
-
-  //pricing change
-const mValue = document.querySelectorAll(".monthlyPrice")
-
-const monthlyPrice = [10,20,40]
-const yearlyPrice = [120,240,480]
-
-if(el.innerHTML.toLowerCase() === "yearly") {
-  mValue.forEach((e,idx)=> {
-    let price= yearlyPrice[idx]
-  e.innerHTML = price.toString()
-  })
-}else(
-  mValue.forEach((e,idx)=> {
-    let price = monthlyPrice[idx]
-  e.innerHTML = price.toString()
-  })
-)
-
-
-
-
-  if(el.classList.contains("pricingButtonActive")){
-    el.classList.remove("pricingButtonActive")
-  }else{
-    el.classList.add("pricingButtonActive")
-  }
-}));
-
- // Get all elements with class "favorite"
- const priceButtonBg = document.querySelector(".pricingBg")
-
- priceButtonBg && priceButtonBg.addEventListener("click", function() {
-
-   if(priceButtonBg.querySelector(".pricingButtonActive").textContent === "Yearly"){
-    priceButtonBg.classList.add("pricingButtonAfterRight")
-   } else {
-    priceButtonBg.classList.remove("pricingButtonAfterRight")
-   }
-
-   if(priceButtonBg.querySelector(".pricingButtonActive").textContent.trim() === "Monthly"){
-    priceButtonBg.classList.add("pricingButtonAfterLeft")
-   } else {
-
-    priceButtonBg.classList.remove("pricingButtonAfterLeft")
-   }
-})
 
 //odometer in view function
 let odometerElement = document.querySelectorAll(".odometer")
@@ -269,162 +215,162 @@ videoModalButtonClose && videoModalButtonClose.addEventListener("click", ()=> {
   videoModalItem.classList.add("videoModalClose")
 })
 
-//personal details in view line animation
-let experienctElement = document.querySelectorAll(".experience")
-if (experienctElement) {
-  const observer = new IntersectionObserver((bars) => {
-    bars.forEach((bar) => {
-      if (bar.isIntersecting) {
-        bar.target.classList.add("w75");
-      } else {
-        bar.target.classList.remove("w75");
-      }
-    });
-  });
-  experienctElement.forEach((bar) => observer.observe(bar));
-}
+// //personal details in view line animation
+// let experienctElement = document.querySelectorAll(".experience")
+// if (experienctElement) {
+//   const observer = new IntersectionObserver((bars) => {
+//     bars.forEach((bar) => {
+//       if (bar.isIntersecting) {
+//         bar.target.classList.add("w75");
+//       } else {
+//         bar.target.classList.remove("w75");
+//       }
+//     });
+//   });
+//   experienctElement.forEach((bar) => observer.observe(bar));
+// }
 
 
-// product description
+// // product description
 
-const productDescriptionTab = document.querySelectorAll(".productDescriptionTab")
+// const productDescriptionTab = document.querySelectorAll(".productDescriptionTab")
 
-productDescriptionTab && productDescriptionTab.forEach( (e)=> e.addEventListener("click", () => {
-  const tabName = e.innerHTML.trim().toLowerCase()
-  const productDesc= document.querySelector(".productDescription")
-  const productReview= document.querySelector(".productReview")
+// productDescriptionTab && productDescriptionTab.forEach( (e)=> e.addEventListener("click", () => {
+//   const tabName = e.innerHTML.trim().toLowerCase()
+//   const productDesc= document.querySelector(".productDescription")
+//   const productReview= document.querySelector(".productReview")
 
-  productDescriptionTab.forEach((e)=> {
-    e?.classList.remove("borderPrimary")
-  })
+//   productDescriptionTab.forEach((e)=> {
+//     e?.classList.remove("borderPrimary")
+//   })
   
-  if( tabName === "description") {
-    e?.classList.remove("border-b-transparent")
-    e?.classList.add("borderPrimary")
-   productDesc.classList.remove("prouctDesctiptionInActive")
-   productDesc.classList.add("prouctDesctiptionActive")
+//   if( tabName === "description") {
+//     e?.classList.remove("border-b-transparent")
+//     e?.classList.add("borderPrimary")
+//    productDesc.classList.remove("prouctDesctiptionInActive")
+//    productDesc.classList.add("prouctDesctiptionActive")
 
-   productReview.classList.add("prouctReviewInActive")
-   productReview.classList.remove("prouctReviewActive")
-  }else{
-    productDesc.classList.add("prouctDesctiptionInActive")
-    productDesc.classList.remove("prouctDesctiptionActive")
+//    productReview.classList.add("prouctReviewInActive")
+//    productReview.classList.remove("prouctReviewActive")
+//   }else{
+//     productDesc.classList.add("prouctDesctiptionInActive")
+//     productDesc.classList.remove("prouctDesctiptionActive")
 
-    productReview.classList.remove("prouctReviewInActive")
-      productReview.classList.add("prouctReviewActive")
-    e?.classList.remove("borderPrimary")
-  }
+//     productReview.classList.remove("prouctReviewInActive")
+//       productReview.classList.add("prouctReviewActive")
+//     e?.classList.remove("borderPrimary")
+//   }
 
 
-  if(tabName === "reviews") {
-    e?.classList.remove("border-b-transparent")
-      e.classList.add("borderPrimary")
+//   if(tabName === "reviews") {
+//     e?.classList.remove("border-b-transparent")
+//       e.classList.add("borderPrimary")
       
-     }
-}))
+//      }
+// }))
 
 
-// appointment dropdown
+// // appointment dropdown
 
-const appointmentDropDown = document.querySelector(".appointMentDropdown")
+// const appointmentDropDown = document.querySelector(".appointMentDropdown")
 
-appointmentDropDown && appointmentDropDown.addEventListener("click",()=> {
+// appointmentDropDown && appointmentDropDown.addEventListener("click",()=> {
 
-  const modal = document.querySelector(".appointmentModal")
-  const modalItem = document.querySelectorAll(".modalItem")
+//   const modal = document.querySelector(".appointmentModal")
+//   const modalItem = document.querySelectorAll(".modalItem")
 
-  if(modal?.classList.contains("modalActive")){
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }else{
-    modal.classList.add("modalActive")
-    modal.classList.remove("modalInActive")
-  }
+//   if(modal?.classList.contains("modalActive")){
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }else{
+//     modal.classList.add("modalActive")
+//     modal.classList.remove("modalInActive")
+//   }
 
-  modalItem.forEach((e)=> e.addEventListener("click",()=> {
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }))
+//   modalItem.forEach((e)=> e.addEventListener("click",()=> {
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }))
 
-})
+// })
 
-// country dropdown
+// // country dropdown
 
-const countryDropDown = document.querySelector(".countryDropDown")
+// const countryDropDown = document.querySelector(".countryDropDown")
 
-countryDropDown && countryDropDown.addEventListener("click",()=> {
+// countryDropDown && countryDropDown.addEventListener("click",()=> {
 
-  const modal = document.querySelector(".countryModal")
-  const modalItem = document.querySelectorAll(".modalItem")
+//   const modal = document.querySelector(".countryModal")
+//   const modalItem = document.querySelectorAll(".modalItem")
 
-  if(modal?.classList.contains("modalActive")){
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }else{
-    modal.classList.add("modalActive")
-    modal.classList.remove("modalInActive")
-  }
+//   if(modal?.classList.contains("modalActive")){
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }else{
+//     modal.classList.add("modalActive")
+//     modal.classList.remove("modalInActive")
+//   }
 
-  modalItem.forEach((e)=> e.addEventListener("click",()=> {
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }))
+//   modalItem.forEach((e)=> e.addEventListener("click",()=> {
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }))
 
-})
+// })
 
-// state dropdown
+// // state dropdown
 
-const stateDropDown = document.querySelector(".stateDropDown")
+// const stateDropDown = document.querySelector(".stateDropDown")
 
-stateDropDown && stateDropDown.addEventListener("click",()=> {
+// stateDropDown && stateDropDown.addEventListener("click",()=> {
 
-  const modal = document.querySelector(".stateModal")
-  const modalItem = document.querySelectorAll(".modalItem")
+//   const modal = document.querySelector(".stateModal")
+//   const modalItem = document.querySelectorAll(".modalItem")
 
-  if(modal?.classList.contains("modalActive")){
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }else{
-    modal.classList.add("modalActive")
-    modal.classList.remove("modalInActive")
-  }
+//   if(modal?.classList.contains("modalActive")){
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }else{
+//     modal.classList.add("modalActive")
+//     modal.classList.remove("modalInActive")
+//   }
 
-  modalItem.forEach((e)=> e.addEventListener("click",()=> {
-    modal.classList.remove("modalActive")
-    modal.classList.add("modalInActive")
-  }))
+//   modalItem.forEach((e)=> e.addEventListener("click",()=> {
+//     modal.classList.remove("modalActive")
+//     modal.classList.add("modalInActive")
+//   }))
 
-})
-
-
-// add remove functionality
-
-const addButton = document.querySelector(".add")
-const removeButton = document.querySelector(".remove")
-const count = document.querySelector(".count")
-
-let value = count ? parseInt(count.innerHTML.trim()) : 0;
-addButton && addButton.addEventListener("click", () => {
-
-  value++;
-
-  count.innerHTML = value.toString();
-});
+// })
 
 
-removeButton && removeButton.addEventListener("click", () => {
+// // add remove functionality
 
-  if(value > 1) --value
+// const addButton = document.querySelector(".add")
+// const removeButton = document.querySelector(".remove")
+// const count = document.querySelector(".count")
 
-  count.innerHTML = value.toString();
-});
+// let value = count ? parseInt(count.innerHTML.trim()) : 0;
+// addButton && addButton.addEventListener("click", () => {
+
+//   value++;
+
+//   count.innerHTML = value.toString();
+// });
 
 
- const scrollButton = document.querySelector(".scrollButton")
+// removeButton && removeButton.addEventListener("click", () => {
 
-scrollButton && scrollButton.addEventListener("click",()=> {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-})
+//   if(value > 1) --value
+
+//   count.innerHTML = value.toString();
+// });
+
+
+//  const scrollButton = document.querySelector(".scrollButton")
+
+// scrollButton && scrollButton.addEventListener("click",()=> {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// })
 
 
 });
